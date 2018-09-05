@@ -5,6 +5,10 @@ const nodeExternals = require('webpack-node-externals');
 module.exports = {
   entry: ['webpack/hot/poll?1000', './src/main.hmr.ts'],
   watch: true,
+  watchOptions: {
+    aggregateTimeout: 300,
+    poll: 1000
+  },
   target: 'node',
   externals: [
     nodeExternals({
