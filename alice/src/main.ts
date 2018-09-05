@@ -7,7 +7,7 @@ declare const module: any;
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   const options = new DocumentBuilder()
-    .setTitle('test exampleasdfasdfasdfasdf')
+    .setTitle('test')
     .setDescription('The cats API description')
     .setVersion('1.0')
     .addTag('cats')
