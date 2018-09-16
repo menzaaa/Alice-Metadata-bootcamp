@@ -1,4 +1,5 @@
-import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column, OneToMany } from 'typeorm';
+import { Tasks } from '../tasks/tasks.entity';
 
 @Entity()
 export class User {
@@ -7,4 +8,7 @@ export class User {
 
     @Column({ length: 500})
     name: string;
+
+    @OneToMany(type => Tasks, tasks => tasks.user)
+    Tasks: Tasks[];
 }

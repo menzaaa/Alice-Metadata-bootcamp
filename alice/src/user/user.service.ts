@@ -15,6 +15,9 @@ export class UserService {
     }
 
     async findOne(id: number) {
-        return await this.userRepository.findOne(id);
+        return await this.userRepository.findOne({
+            select: ["id", "name"],
+            relations: ["Tasks"]
+        });
     }
 }
