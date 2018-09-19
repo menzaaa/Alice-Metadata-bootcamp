@@ -8,7 +8,7 @@ import { TasksService } from 'tasks/tasks.service';
 @Global()
 @Module({
     imports: [TypeOrmModule.forFeature([User])],
-    providers: [UserService, TasksService],
+    providers: [UserService],
     controllers: [UserController],
     exports: [UserService],
 })
