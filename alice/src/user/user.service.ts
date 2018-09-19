@@ -20,4 +20,12 @@ export class UserService {
             relations: ["Tasks"]
         });
     }
+
+    async create(user: User) {
+        return await this.userRepository.save(user);
+    }
+
+    async update(user: User) {
+        return await this.userRepository.save(user);
+    }
 }
