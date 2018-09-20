@@ -26,4 +26,8 @@ export class TasksService {
             }
         });
     }
+
+    async create(tasks: Tasks) {
+        return await this.tasksRepository.save(tasks);
+    }
 }

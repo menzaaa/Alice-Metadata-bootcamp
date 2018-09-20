@@ -4,6 +4,7 @@ import { TasksService } from './tasks.service';
 import { User } from './../user/user.entity';
 import { UserService} from './../user/user.service';
 import { ApiUseTags, ApiOperation } from '@nestjs/swagger';
+import { CreateTasksDto } from './dto/create-tasks.dto';
 
 @ApiUseTags('tasks')
 @Controller('tasks')
@@ -27,8 +28,10 @@ export class TasksController {
 
 	@Post('/user/:id')
 	@ApiOperation({ title: "Create task"})
-	async create() {
-		
+	async create(@Param('id') id: string, @Body() CreateTasksDto: CreateTasksDto) {
+		const user = await this.userService.findOne(Number(id));
+		const tasks = new Tasks();
+		return this.tasksService.create(tasks);
 	}
 
 	
