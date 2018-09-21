@@ -1,0 +1,4 @@
+sudo apt-get install libcurl4-openssl-dev
+pkg-config --libs libcurl
+g++ ../src/main.cpp -lcurl -o main.o
+./main.o
