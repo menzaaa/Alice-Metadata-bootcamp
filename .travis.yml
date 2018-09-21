@@ -2,6 +2,7 @@ language: node_js
 
 before_install:
   - cd alice
+  - npm install npm -g
 
 script:
   - npm run dev
